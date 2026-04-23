@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карьера | Звезда Арктура</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Звезда Арктура</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#about">О нас</a></li>
+                    <li><a href="../index.html#games">Наши игры</a></li>
+                    <li><a href="../index.html#team">Команда</a></li>
+                    <li><a href="../index.html#contact">Контакты</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Присоединяйтесь к нашей команде</h1>
+                <p>Мы ищем талантливых разработчиков, художников и креативных людей, чтобы создавать незабываемые игры, вдохновленные мифами и космосом.</p>
+                <a href="#vacancies" class="btn">Открытые вакансии</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vacancies Section -->
+    <section class="section" id="vacancies">
+        <div class="container">
+            <h2 class="section-title">Открытые вакансии</h2>
+            <div class="vacancies-grid">
+                <div class="vacancy-card">
+                    <div class="vacancy-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="vacancy-info">
+                        <h3>Программист Unity/C#</h3>
+                        <p>Мы ищем опытного разработчика для работы над игровыми механиками и оптимизацией производительности.</p>
+                        <ul>
+                            <li>Опыт работы с Unity не менее 2 лет</li>
+                            <li>Знание C# и скриптинга</li>
+                            <li>Понимание геймдизайна</li>
+                        </ul>
+                        <a href="#contact" class="btn">Откликнуться</a>
+                    </div>
+                </div>
+                <div class="vacancy-card">
+                    <div class="vacancy-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="vacancy-info">
+                        <h3>Художник-концептуалист</h3>
+                        <p>Создавайте визуалы для миров, вдохновленных древними цивилизациями и космосом.</p>
+                        <ul>
+                            <li>Опыт в цифровой живописи</li>
+                            <li>Знание Photoshop или аналогичных инструментов</li>
+                            <li>Портфолио с фантастическими мирами</li>
+                        </ul>
+                        <a href="#contact" class="btn">Откликнуться</a>
+                    </div>
+                </div>
+                <div class="vacancy-card">
+                    <div class="vacancy-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="vacancy-info">
+                        <h3>Геймдизайнер</h3>
+                        <p>Проектируйте увлекательные геймплейные механики и нарративы.</p>
+                        <ul>
+                            <li>Опыт в геймдизайне</li>
+                            <li>Знание инструментов вроде Twine или Unity</li>
+                            <li>Креативность и внимание к деталям</li>
+                        </ul>
+                        <a href="#contact" class="btn">Откликнуться</a>
+                    </div>
+                </div>
+                <div class="vacancy-card">
+                    <div class="vacancy-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="vacancy-info">
+                        <h3>Композитор/Звукорежиссер</h3>
+                        <p>Создавайте атмосферную музыку и звуковые эффекты для наших игр.</p>
+                        <ul>
+                            <li>Опыт в композиции и звуковом дизайне</li>
+                            <li>Знание DAW (FL Studio, Ableton и т.д.)</li>
+                            <li>Портфолио с примерами работ</li>
+                        </ul>
+                        <a href="#contact" class="btn">Откликнуться</a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; color: #aac6df;">Не нашли подходящей вакансии? Отправьте нам своё резюме — мы всегда рады талантливым кандидатам!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section for Applications -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Откликнуться на вакансию</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Мы ждём вашего резюме!</h3>
+                    <p>Расскажите о себе, прикрепите портфолио и укажите интересующую позицию. Мы рассмотрим вашу кандидатуру в кратчайшие сроки.</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> hr@arcturus-star.ru</p>
+                        <p><i class="fas fa-phone"></i> +7 (929) 100-64-36</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="careerForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Интересующая позиция</label>
+                            <select id="position" name="position" required>
+                                <option value="">Выберите позицию</option>
+                                <option value="programmer">Программист Unity/C#</option>
+                                <option value="artist">Художник-концептуалист</option>
+                                <option value="gamedesigner">Геймдизайнер</option>
+                                <option value="composer">Композитор/Звукорежиссер</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Расскажите о себе и опыте</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio">Ссылка на портфолио (опционально)</label>
+                            <input type="url" id="portfolio" name="portfolio">
+                        </div>
+                        <button type="submit" class="btn submit-btn">Отправить резюме</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-rocket"></i> Звезда Арктура
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Главная</a>
+                <a href="../index.html#about">О нас</a>
+                <a href="../index.html#games">Игры</a>
+                <a href="../index.html#team">Команда</a>
+                <a href="../index.html#contact">Контакты</a>
+                <a href="#">Карьера</a>
+                <a href="#">Пресс-кит</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-odnoklassniki"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-steam"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; <span id="currentYear"></span> Звезда Арктура. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

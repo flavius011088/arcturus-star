@@ -215,6 +215,76 @@ nav {
     color: #e6f0ff;
 }
 
+/* vacancies grid */
+.vacancies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.vacancy-card {
+    background: #16222e;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #2f4355;
+    display: flex;
+    flex-direction: column;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(255, 170, 51, 0.15);
+}
+
+.vacancy-icon {
+    height: 120px;
+    background: linear-gradient(135deg, #2b4050, #3a5060);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffaa33;
+    font-size: 3rem;
+}
+
+.vacancy-info {
+    padding: 25px 20px;
+    flex-grow: 1;
+}
+
+.vacancy-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffcf8a;
+}
+
+.vacancy-info p {
+    color: #b8d8ff;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.vacancy-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.vacancy-info li {
+    color: #aac6df;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.vacancy-info li:before {
+    content: "✓";
+    color: #ffaa33;
+    position: absolute;
+    left: 0;
+}
+
 /* team */
 .team-grid {
     display: grid;
