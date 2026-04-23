@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звезда Арктура | Легенды древних миров и космос</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0c12;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        header {
+            background: rgba(10, 20, 30, 0.95);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #2a3a4a;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #b8d8ff;
+            letter-spacing: 1px;
+        }
+
+        .logo i {
+            color: #ffaa33;
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffaa33;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* hero */
+        .hero {
+            background: linear-gradient(115deg, #0b1a2a 0%, #1c3a4f 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(0, 160, 255, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #c0d0e0;
+        }
+
+        .btn {
+            background: #ffaa33;
+            color: #0a1a2a;
+            padding: 14px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #ffc164;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ffaa33;
+        }
+
+        /* sections */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #1e2f3a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: #ffaa33;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            border: 3px solid #3a5f7a;
+        }
+
+        /* games grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            background: #16222e;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #2f4355;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(255, 170, 51, 0.15);
+        }
+
+        .game-image {
+            height: 220px;
+            background: #2b4050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b0c4de;
+            font-size: 1.5rem;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 25px 20px;
+        }
+
+        .game-title {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: #ffcf8a;
+        }
+
+        .game-genre {
+            display: inline-block;
+            background: #2a4b63;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: #e6f0ff;
+        }
+
+        /* team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .team-member {
+            background: #1b2936;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .member-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffaa33;
+            margin-bottom: 20px;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #ffaa33;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            color: #ccc;
+            margin: 0 8px;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffaa33;
+        }
+
+        /* contact */
+        .contact {
+            background: #0e1c28;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-details {
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-details i {
+            width: 30px;
+            color: #ffaa33;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b8d4f0;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: #253745;
+            border: 1px solid #3d5e78;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            font-size: 1.2rem;
+        }
+
+        /* footer */
+        footer {
+            background: #071018;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffaa33;
+        }
+
+        .footer-social {
+            margin: 30px 0;
+        }
+
+        .footer-social a {
+            color: #ccc;
+            font-size: 1.8rem;
+            margin: 0 15px;
+        }
+
+        .copyright {
+            color: #6a7f8f;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .about-content,
+            .contact-container,
+            .team-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Звезда Арктура</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#games">Наши игры</a></li>
+                    <li><a href="#team">Команда</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Путешествия сквозь мифы и галактики</h1>
+                <p>Звезда Арктура — молодая инди-студия, где рождаются новые миры. Мы создаём игры, погружающие в
+                    атмосферу древних цивилизаций и далёких звёзд.</p>
+                <a href="#games" class="btn">Наши проекты</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (обновлено с учётом нового каталога) -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">О нашей студии</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Первым проектом для студии «Звезда Арктура» стал космический экшен-шутер Nova Decay: Alien Surge,
+                        однако компания на нем не останавливается: нас вдохновляют истории, рождённые легендами, которые
+                        бескрайни, как вселенная. Сегодня мы объединяем научную фантастику и фольклор народов мира.</p>
+                    <p>Наша миссия — воскресить забытые легенды через интерактивные миры. От Древней Руси до цивилизации
+                        майя, от Ассирии до далёкой станции «Нова Проспект» — мы исследуем тьму и свет.</p>
+                    <p>Мы сотрудничаем с историками, этнографами и астрофизиками, чтобы каждый сеттинг был достоверным и
+                        захватывающим.</p>
+                    <a href="#team" class="btn" style="margin-top: 20px;">Наша команда</a>
+                </div>
+                <div class="about-image">
+                    <!-- фоновая заглушка / для демо используем серый блок, но можно заменить на реальное фото -->
+                    <div
+                        style="background: #2a4055; height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 1.4rem; border: 3px solid #ffaa33;">
+                        <i class="fas fa-users fa-4x" style="opacity: 0.7;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section ПОЛНОСТЬЮ ОБНОВЛЕНА на основе Перечня игр.xlsx -->
+    <section class="section" id="games">
+        <div class="container">
+            <h2 class="section-title">Наши игры</h2>
+            <div class="games-grid">
+
+                <!-- 1. Ночная стража (Древняя Русь) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-tree" style="font-size: 4rem; color: #7aa57a;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Ночная стража</h3>
+                        <span class="game-genre">Экшн/RPG (Древняя Русь)</span>
+                        <p>Тьма накрыла Русь — нечисть выходит из лесов. Избранный богами должен продержаться до
+                            рассвета и найти источник проклятия.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 2. Ahau's Reckoning (майя) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-sun" style="font-size: 4rem; color: #f0c45a;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Ahau's Reckoning</h3>
+                        <span class="game-genre">Мифологический хоррор</span>
+                        <p>После ритуала календаря майя открываются врата Шибальбы. Последний защитник получает дар
+                            богов, чтобы закрыть врата.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 3. Inti's Legacy: Survivors of the Sun (инки) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-mountain-sun" style="font-size: 4rem; color: #e6b422;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Inti's Legacy</h3>
+                        <span class="game-genre">Приключение/экшн</span>
+                        <p>После падения инков древнее зло пробудилось. Последний воин Солнца должен восстановить связь
+                            с богом Инти.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 4. Blood of Huitzilopochtli (ацтеки) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-skull" style="font-size: 4rem; color: #b87333;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Blood of Huitzilopochtli</h3>
+                        <span class="game-genre">Слэшер</span>
+                        <p>Последний жрец Уицилопочтли бежит из Теночтитлана, ищет артефакты в джунглях и сражается с
+                            конкистадорами-нежитью. Финал — битва с Тескатлипокой.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 5. Oni Survivors: Shadows of the Shogunate (Япония) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-mask" style="font-size: 4rem; color: #b04f6f;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Oni Survivors</h3>
+                        <span class="game-genre">Survival / экшн</span>
+                        <p>Ронин, выживший после резни демонами, ищет способ уничтожить Они-сёгуна — источник тьмы в
+                            эпоху сёгуната.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 6. Wuxia Jianghu (Китай) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-dragon" style="font-size: 4rem; color: #50a050;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Wuxia Jianghu</h3>
+                        <span class="game-genre">Боевые искусства</span>
+                        <p>Изгнанный мастер должен очистить земли от тьмы, пробуждённой древним проклятием. Путь воина в
+                            духе уся.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 7. Ghosts of Goryeo (Корея) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-ghost" style="font-size: 4rem; color: #c0a0d0;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Ghosts of Goryeo</h3>
+                        <span class="game-genre">Хоррор на выживание</span>
+                        <p>Корея эпохи Корё: проклятие пробуждает духов. Последний защитник должен продержаться до
+                            рассвета, пока монахи завершают обряд.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 8. Shadows of Persepolis (Персия) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-crown" style="font-size: 4rem; color: #e0b070;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Shadows of Persepolis</h3>
+                        <span class="game-genre">Мистический экшн</span>
+                        <p>После падения Персидской империи бывший страж гробницы сталкивается с духом Ксеркса,
+                            стремящимся возродить империю через жертвы.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 9. Ashur's Wrath: Blood of the Empire (Ассирия) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-hammer-crash" style="font-size: 4rem; color: #aa8866;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Ashur's Wrath</h3>
+                        <span class="game-genre">Тёмное фэнтези</span>
+                        <p>Воин, преданный царём и проклятый богами, обречён на вечную войну с тьмой. Он должен исцелить
+                            земли Ассирии.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 10. Mysteries of Ziggurat (Месопотамия) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-pyramid" style="font-size: 4rem; color: #c9a87c;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Mysteries of Ziggurat</h3>
+                        <span class="game-genre">Эпическое приключение</span>
+                        <p>Герой послан богами сражаться с хаосом в Месопотамии. Нужно победить демонов и остановить
+                            возвращение Тиамат.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 11. Pharaoh's Curse: Eternal Sands (Египет) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-eye" style="font-size: 4rem; color: #dbb87c;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Pharaoh's Curse</h3>
+                        <span class="game-genre">Хоррор / проклятие</span>
+                        <p>Археолог разграбил гробницу фараона и пробудил проклятие. Теперь он должен снять его или
+                            погибнуть в песках.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 12. Titans' Reckoning (Греция) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-cloud-sun" style="font-size: 4rem; color: #d4c37a;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Titans' Reckoning</h3>
+                        <span class="game-genre">Мифологический экшн</span>
+                        <p>Боги разгневаны и наслали на Грецию мифических существ. Последний герой должен пережить
+                            нашествие и либо умилостивить богов, либо свергнуть их.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 13. Last Legion: Glory & Gore (Рим) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-shield-halved" style="font-size: 4rem; color: #b87333;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Last Legion</h3>
+                        <span class="game-genre">Рим / историческое фэнтези</span>
+                        <p>Легионер после заговора в Сенате противостоит предателям и пробудившимся богам. Путь от руин
+                            Рима до храма Юпитера.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+
+                <!-- 14. Nova Hunters (Sci-Fi, станция Нова Проспект) -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <i class="fas fa-satellite" style="font-size: 4rem; color: #7fb4d0;"></i>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Nova Hunters</h3>
+                        <span class="game-genre">Космический хоррор</span>
+                        <p>2388 год. Корвет «Защитник» терпит крушение у станции «Нова Проспект». Офицер сражается с
+                            ксеноморфной биомассой и ищет способ связаться с Флотом.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; color: #aac6df;">Всего проектов: 14. Каждая игра —
+                уникальное путешествие в историю или будущее.</p>
+        </div>
+    </section>
+
+    <!-- Team Section (без изменений, но оставлена как есть) -->
+    <section class="section" id="team">
+        <div class="container">
+            <h2 class="section-title">Команда</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/team/sergey-protsyuk.jpg" alt="Сергей Процюк" class="member-photo"
+                        style="background: #2b4b65;">
+                    <h3 class="member-name">Процюк Сергей Николаевич</h3>
+                    <p class="member-role">Геймдизайнер, креативный директор, ведущий программист, старший художник и
+                        звукорежиссер</p>
+                    <p>Аспирант, соискатель степени кандидата экономических наук, отвечает за научную достоверность,
+                        создает миры на стыке мифологии и фантастики, проектируют физические системы и геймплейные
+                        механики, формирует аутентичные ландшафты от тишины вакуума до этнических ритуалов.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Готовы к сотрудничеству!</h3>
+                    <p>Мы открыты для партнёрств, инвестиций и предложений. Погружайтесь в создание новых миров вместе с
+                        нами.</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Новгородская область, р.п. Демянск, ул. Труда, д. 19А
+                        </p>
+                        <p><i class="fas fa-envelope"></i> info@arcturus-star.ru</p>
+                        <p><i class="fas fa-phone"></i> +7 (929) 100-64-36</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img src="https://arcturus-star.ru/icons/MAX.svg" alt="MAX" width="28" height="28"
+                                style="vertical-align: middle;">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-viber"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-vk"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-odnoklassniki"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img src="https://arcturus-star.ru/icons/signal-icon.svg" alt="Signal" width="28"
+                                height="28" style="vertical-align: middle;">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img src="https://arcturus-star.ru/icons/imo-icon.svg" alt="Imo" width="28" height="28"
+                                style="vertical-align: middle;">
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-rocket"></i> Звезда Арктура
+            </div>
+            <div class="footer-links">
+                <a href="#home">Главная</a>
+                <a href="#about">О нас</a>
+                <a href="#games">Игры</a>
+                <a href="#team">Команда</a>
+                <a href="#contact">Контакты</a>
+                <a href="#">Карьера</a>
+                <a href="#">Пресс-кит</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-steam"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; <span id="currentYear"></span> 2026 Звезда Арктура. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // простой гамбургер (можно добавить функционал позже)
+        document.querySelector('.hamburger').addEventListener('click', () => alert('Меню навигации: пока в разработке, но вы можете использовать ссылки в шапке.'));
+    </script>
+</body>
+
+</html>
