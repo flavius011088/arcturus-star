@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пресс-кит | Звезда Арктура</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .press-kit-section {
+            margin-bottom: 60px;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .fact-card {
+            background: linear-gradient(135deg, #16222e, #1f2f3d);
+            border-left: 4px solid #ffaa33;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #2f4355;
+        }
+
+        .fact-card h3 {
+            color: #ffaa33;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .fact-card p {
+            color: #b8d8ff;
+            line-height: 1.6;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .download-card {
+            background: #16222e;
+            border: 1px solid #2f4355;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(255, 170, 51, 0.1);
+        }
+
+        .download-icon {
+            font-size: 3rem;
+            color: #ffaa33;
+            margin-bottom: 15px;
+        }
+
+        .download-card h3 {
+            color: #ffcf8a;
+            margin-bottom: 10px;
+        }
+
+        .download-card p {
+            color: #aac6df;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #ffaa33;
+            color: #0a1929;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #ffc850;
+        }
+
+        .press-release {
+            background: #16222e;
+            border-left: 4px solid #ffaa33;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #2f4355;
+        }
+
+        .press-release-date {
+            color: #ffaa33;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .press-release h3 {
+            color: #ffcf8a;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .press-release p {
+            color: #b8d8ff;
+            line-height: 1.7;
+        }
+
+        .social-contacts {
+            background: #16222e;
+            border: 1px solid #2f4355;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .social-contacts h3 {
+            color: #ffcf8a;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #2f4355;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item p {
+            color: #b8d8ff;
+            margin: 5px 0;
+        }
+
+        .contact-label {
+            color: #ffaa33;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Звезда Арктура</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#about">О нас</a></li>
+                    <li><a href="../index.html#games">Наши игры</a></li>
+                    <li><a href="../index.html#team">Команда</a></li>
+                    <li><a href="../index.html#contact">Контакты</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Пресс-кит студии</h1>
+                <p>Полная информация о «Звезде Арктура»: факты, ресурсы и контакты для СМИ.</p>
+                <a href="#downloads" class="btn">Загрузить материалы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Overview -->
+    <section class="section press-kit-section">
+        <div class="container">
+            <h2 class="section-title">О студии</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Звезда Арктура</strong> — молодая российская инди-студия, специализирующаяся на создании игр, сочетающих научную фантастику и древнюю мифологию. Основана в 2024 году с миссией воскресить забытые легенды через интерактивные миры.</p>
+                    <p>Первым проектом студии стал космический хоррор <strong>Nova Decay: Alien Surge</strong>, однако наша амбиция намного больше. Мы разработали каталог из 14 уникальных игр, каждая из которых исследует богатую культурное наследие различных цивилизаций — от Древней Руси до Месопотамии, от ацтеков до далёких космических станций.</p>
+                    <p>Команда студии состоит из опытных разработчиков, художников и дизайнеров, которые сотрудничают с историками и этнографами для обеспечения научной достоверности каждого проекта.</p>
+                </div>
+                <div class="about-image">
+                    <div style="background: linear-gradient(135deg, #2a4055, #1f3a4f); height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 1.4rem; border: 3px solid #ffaa33;">
+                        <i class="fas fa-star fa-4x" style="opacity: 0.7;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Facts -->
+    <section class="section press-kit-section">
+        <div class="container">
+            <h2 class="section-title">Ключевые факты</h2>
+            <div class="fact-grid">
+                <div class="fact-card">
+                    <h3><i class="fas fa-gamepad"></i> Проектов в разработке</h3>
+                    <p>14 уникальных игр с уникальными сюжетами, вдохновленными мировой историей и мифологией</p>
+                </div>
+                <div class="fact-card">
+                    <h3><i class="fas fa-globe"></i> Жанры</h3>
+                    <p>Экшн, RPG, хоррор, приключения, боевые искусства, научная фантастика и многое другое</p>
+                </div>
+                <div class="fact-card">
+                    <h3><i class="fas fa-users"></i> Команда</h3>
+                    <p>Опытные разработчики, художники, дизайнеры и консультанты по истории и культуре</p>
+                </div>
+                <div class="fact-card">
+                    <h3><i class="fas fa-book"></i> Источники вдохновения</h3>
+                    <p>Древние цивилизации: Русь, майя, инки, ацтеки, Япония, Китай, Корея, Персия и другие</p>
+                </div>
+                <div class="fact-card">
+                    <h3><i class="fas fa-award"></i> Подход</h3>
+                    <p>Научная достоверность + атмосферный геймплей + аутентичные ландшафты и культурные детали</p>
+                </div>
+                <div class="fact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Размещение</h3>
+                    <p>Новгородская область, Российская Федерация</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Showcase -->
+    <section class="section press-kit-section">
+        <div class="container">
+            <h2 class="section-title">Портфель игр (14 проектов)</h2>
+            <p style="color: #b8d8ff; text-align: center; margin-bottom: 30px;">Каждая игра представляет собой погружение в уникальный мир, созданный на стыке истории и воображения.</p>
+            <div class="fact-grid">
+                <div class="fact-card">
+                    <h3>🌲 Ночная стража</h3>
+                    <p>Экшн/RPG • Древняя Русь</p>
+                </div>
+                <div class="fact-card">
+                    <h3>☀️ Ahau's Reckoning</h3>
+                    <p>Мифологический хоррор • Майя</p>
+                </div>
+                <div class="fact-card">
+                    <h3>⛰️ Inti's Legacy</h3>
+                    <p>Приключение/экшн • Инки</p>
+                </div>
+                <div class="fact-card">
+                    <h3>💀 Blood of Huitzilopochtli</h3>
+                    <p>Слэшер • Ацтеки</p>
+                </div>
+                <div class="fact-card">
+                    <h3>👹 Oni Survivors</h3>
+                    <p>Survival/экшн • Япония</p>
+                </div>
+                <div class="fact-card">
+                    <h3>🐉 Wuxia Jianghu</h3>
+                    <p>Боевые искусства • Китай</p>
+                </div>
+                <div class="fact-card">
+                    <h3>👻 Ghosts of Goryeo</h3>
+                    <p>Хоррор на выживание • Корея</p>
+                </div>
+                <div class="fact-card">
+                    <h3>👑 Shadows of Persepolis</h3>
+                    <p>Мистический экшн • Персия</p>
+                </div>
+                <div class="fact-card">
+                    <h3>⚔️ Ashur's Wrath</h3>
+                    <p>Тёмное фэнтези • Ассирия</p>
+                </div>
+                <div class="fact-card">
+                    <h3>🔺 Mysteries of Ziggurat</h3>
+                    <p>Эпическое приключение • Месопотамия</p>
+                </div>
+                <div class="fact-card">
+                    <h3>👁️ Pharaoh's Curse</h3>
+                    <p>Хоррор/проклятие • Египет</p>
+                </div>
+                <div class="fact-card">
+                    <h3>⚡ Titans' Reckoning</h3>
+                    <p>Мифологический экшн • Греция</p>
+                </div>
+                <div class="fact-card">
+                    <h3>🛡️ Last Legion: Glory and Gore</h3>
+                    <p>Рим/историческое фэнтези • Рим</p>
+                </div>
+                <div class="fact-card">
+                    <h3>🛸 Nova Decay: Alien Surge</h3>
+                    <p>Космический хоррор • Научная фантастика</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Releases -->
+    <section class="section press-kit-section">
+        <div class="container">
+            <h2 class="section-title">Пресс-релизы</h2>
+            
+            <div class="press-release">
+                <div class="press-release-date">23 апреля 2026</div>
+                <h3>Студия «Звезда Арктура» представляет портфель из 14 уникальных игр</h3>
+                <p>Российская инди-студия объявляет о запуске амбициозного проекта, который объединит научную фантастику и древнюю мифологию. Каждая игра будет разработана в сотрудничестве с историками и этнографами для обеспечения подлинности и атмосферности игровых миров.</p>
+            </div>
+
+            <div class="press-release">
+                <div class="press-release-date">15 марта 2026</div>
+                <h3>Nova Decay: Alien Surge — первый проект студии готов к выпуску</h3>
+                <p>Космический хоррор, разработанный студией «Звезда Арктура», сочетает в себе напряженный геймплей, аутентичный научно-фантастический сеттинг и захватывающий сюжет о выживании на станции «Нова Проспект».</p>
+            </div>
+
+            <div class="press-release">
+                <div class="press-release-date">1 января 2026</div>
+                <h3>«Звезда Арктура» официально основана</h3>
+                <p>Команда из опытных разработчиков и креативных специалистов объединилась для создания игр нового поколения, которые переосмысляют взаимодействие истории, мифологии и интерактивных медиа.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="section press-kit-section" id="downloads">
+        <div class="container">
+            <h2 class="section-title">Скачать материалы</h2>
+            <div class="downloads-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Логотипы и иконки</h3>
+                    <p>Полный набор логотипов студии в различных форматах и размерах</p>
+                    <a href="#" class="download-btn">Загрузить (ZIP, 5 МБ)</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-screenshot"></i>
+                    </div>
+                    <h3>Скриншоты и арт</h3>
+                    <p>Коллекция скриншотов из игр и концепт-артов высокого разрешения</p>
+                    <a href="#" class="download-btn">Загрузить (ZIP, 45 МБ)</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Информационный пакет</h3>
+                    <p>PDF с детальной информацией о студии, команде и проектах</p>
+                    <a href="#" class="download-btn">Загрузить (PDF, 8 МБ)</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Трейлеры и видео</h3>
+                    <p>Ссылки на трейлеры игр и видеоматериалы студии</p>
+                    <a href="#" class="download-btn">Перейти на канал</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Звуковые эффекты</h3>
+                    <p>Сборка фоновой музыки и звуков из наших игр</p>
+                    <a href="#" class="download-btn">Загрузить (ZIP, 120 МБ)</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Факт-лист</h3>
+                    <p>Краткий экономический и фактический лист о студии</p>
+                    <a href="#" class="download-btn">Загрузить (PDF, 2 МБ)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Contacts -->
+    <section class="section press-kit-section">
+        <div class="container">
+            <h2 class="section-title">Контакты для СМИ</h2>
+            <div class="social-contacts">
+                <h3>Свяжитесь с нами</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-label"><i class="fas fa-envelope"></i> Email</span>
+                        <p><a href="mailto:press@arcturus-star.ru" style="color: #ffaa33; text-decoration: none;">press@arcturus-star.ru</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><i class="fas fa-phone"></i> Телефон</span>
+                        <p>+7 (929) 100-64-36</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><i class="fas fa-map-marker-alt"></i> Адрес</span>
+                        <p>Новгородская область, р.п. Демянск, ул. Труда, д. 19А</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label"><i class="fas fa-globe"></i> Социальные сети</span>
+                        <p style="display: flex; gap: 15px;">
+                            <a href="#" style="color: #ffaa33;"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" style="color: #ffaa33;"><i class="fab fa-youtube"></i> YouTube</a>
+                            <a href="#" style="color: #ffaa33;"><i class="fab fa-discord"></i> Discord</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-rocket"></i> Звезда Арктура
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Главная</a>
+                <a href="../index.html#about">О нас</a>
+                <a href="../index.html#games">Игры</a>
+                <a href="../index.html#team">Команда</a>
+                <a href="../index.html#contact">Контакты</a>
+                <a href="">Карьера</a>
+                <a href="">Пресс-кит</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-odnoklassniki"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-steam"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; <span id="currentYear"></span> Звезда Арктура. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
