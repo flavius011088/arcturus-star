@@ -1,0 +1,21 @@
+{
+  "name": "arcturus-star",
+  "version": "1.0.0",
+  "description": "Звезда Арктура - инди-студия создания игр на стыке мифологии и космоса",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "serve": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "games",
+    "mythology",
+    "space",
+    "indie"
+  ],
+  "author": "Процюк Сергей Николаевич",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
